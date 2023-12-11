@@ -1,5 +1,6 @@
-import React, {FC} from 'react';
+import {FC} from 'react';
 import Container from "@/app/components/Container/Container";
+import SearchLocation from "@/app/components/Header/SearchLocation/SearchLocation";
 
 interface HeaderProps {
 
@@ -7,9 +8,11 @@ interface HeaderProps {
 
 const Header: FC<HeaderProps> = () => {
     return (
-        <header className={"w-full h-20 bg-slate-700"}>
+        <header className={"w-full py-5 "}>
             <Container>
-                Header
+                <div className={"flex justify-around"}>
+                    <SearchLocation/>
+                </div>
             </Container>
         </header>
     );

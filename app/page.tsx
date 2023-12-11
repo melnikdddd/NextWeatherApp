@@ -1,9 +1,9 @@
-import Image from 'next/image'
-
+import Main from "@/app/ui/Main/Main";
 export default function Home() {
     return (
-        <div>
-            Home
+        <div className={"min-h-screen"}>
+            <Main/>
         </div>
+
     )
 }
