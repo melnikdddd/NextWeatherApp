@@ -49,6 +49,7 @@ export interface SuccessfulData {
     sys: ISys;
     weather: IWeather[];
     wind: IWind;
+    visibility: number;
 }
 
 export interface UnSuccessfulData {

@@ -1,8 +1,14 @@
-import {ReactNode} from "react";
+import {ReactNode, FC} from "react";
 
-const WeatherCard = ({children}: {children: ReactNode}) => {
+
+interface WeatherCardProps {
+    children: ReactNode;
+    classname?: string
+}
+
+const WeatherCard: FC<WeatherCardProps> = ({children, classname}) => {
     return (
-        <div className={"bg-opacity-20 rounded-lg shadow-lg shadow-slate-600 p-6"}>
+        <div className={`bg-opacity-70 rounded-lg shadow-md p-6 ${classname}`}>
             {children}
         </div>
     );

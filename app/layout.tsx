@@ -1,9 +1,10 @@
 import type {Metadata} from 'next'
 import {Roboto} from 'next/font/google'
-import './globals.css'
+import './globals.scss'
 import Footer from "@/app/components/Footer/Footer";
 import Header from "@/app/components/Header/Header";
 import {StoreProvider} from "@/app/lib/store/StoreProvider";
+import ThemeWrapper from "@/app/components/Wrapper/ThemeWrapper";
 
 const roboto = Roboto({subsets: ['latin'], weight: "400"})
 
@@ -19,12 +20,16 @@ export default function RootLayout({children,}: {
     return (
         <html lang="en">
         <body className={`${roboto.className} antialiased`}>
-        <StoreProvider>
-            <Header/>
-            <main>
-                {children}
-            </main>
-            <Footer/>
+        <StoreProvider >
+            <ThemeWrapper>
+                <div className={"flex flex-col h-full justify-between min-h-screen"}>
+                    <Header/>
+                    <main className="flex-grow home-wrap">
+                        {children}
+                    </main>
+                    <Footer/>
+                </div>
+            </ThemeWrapper>
         </StoreProvider>
         </body>
         </html>
